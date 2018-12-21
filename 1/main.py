@@ -25,4 +25,19 @@ while not frequent:
             line = f.readline().replace('""', '')
 print(frequent)
 
-# Why doesn't frequency work with a list instead of a set?
+# Why doesn't this find an answer 
+""" frequencyList = []
+frequentList = None
+n = 0
+
+while not frequentList:
+    with open("data.txt") as f:
+        line = f.readline().replace('""', '')
+        while line and not frequentList:
+            n += int(line)
+            if n in frequencyList:
+                frequentList = n
+                break
+            frequencyList.append(n)
+            line = f.readline().replace('""', '')
+print(frequentList) """
