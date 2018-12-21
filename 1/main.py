@@ -1,22 +1,28 @@
-frequency = []
+# Part 1
+with open("data.txt") as f:
+    line = f.readline().replace('""', '')
+    n = 0
+    while line:
+        n += int(line)
+        line = f.readline().replace('""', '')
+    print('Total: ' + str(n))
+        
+
+# Part II
+frequency = {0}
 frequent = None
 n = 0
-
-def addFrequency(i):
-    if i in frequency:
-        frequent = i
-        print(i)
-        return i
-    frequency.append(i)
-
 
 while not frequent:
     with open("data.txt") as f:
         line = f.readline().replace('""', '')
-        while line:
+        while line and not frequent:
             n += int(line)
-            addFrequency(n)
+            if n in frequency:
+                frequent = n
+                break
+            frequency.add(n)
             line = f.readline().replace('""', '')
 print(frequent)
 
-# Part II
+# Why doesn't frequency work with a list instead of a set?
