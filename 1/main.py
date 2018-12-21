@@ -13,6 +13,8 @@ frequency = {0}
 frequent = None
 n = 0
 
+counter = 0
+
 while not frequent:
     with open("data.txt") as f:
         line = f.readline().replace('""', '')
@@ -23,12 +25,16 @@ while not frequent:
                 break
             frequency.add(n)
             line = f.readline().replace('""', '')
+        counter += 1
 print(frequent)
+print(counter)
 
-# Why doesn't this find an answer 
-""" frequencyList = []
+# Works, just is really slow
+frequencyList = []
 frequentList = None
 n = 0
+s = counter
+counter = 0
 
 while not frequentList:
     with open("data.txt") as f:
@@ -40,4 +46,5 @@ while not frequentList:
                 break
             frequencyList.append(n)
             line = f.readline().replace('""', '')
-print(frequentList) """
+        counter += 1
+print(frequentList)
